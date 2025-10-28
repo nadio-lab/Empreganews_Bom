@@ -1,0 +1,542 @@
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f6f6f6;
+    color: #233;
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background: #fff;
+}
+th, td {
+    border: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background: #2a6dad;
+    color: #fff;
+}
+
+header {
+    background: #2d8cff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 5vw;
+    box-shadow: 0 2px 8px #0001;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.alerta-php{
+    margin-left: 40px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 36px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: text-decoration 0.2s;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #ffc20a;
+    
+}
+
+/* Busca */
+.busca-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 30px;
+}
+
+.busca-form input {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+}
+
+.busca-form button {
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #fff;
+    color: #2d8cff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+.busca-form button:hover {
+    background: #225fa2;
+    color: #fff;
+}
+
+main {
+    max-width: 1100px;
+    margin: 32px auto 0 auto;
+    padding: 0 16px;
+}
+
+.notification-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffecb3;
+    color: #9d6600;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px #0002;
+}
+.notification-banner .close-notification {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Filtros */
+.filtros-vagas {
+    margin-bottom: 18px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.filtros-vagas select {
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 1px solid #b6d3f6;
+    font-size: 1rem;
+    background: #f4faff;
+    transition: border 0.2s;
+}
+.filtros-vagas select:focus {
+    border: 1.5px solid #2d8cff;
+}
+
+/* Vagas */
+.publicidades, .motivacional, .depoimentos, .faq, .blog {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 6px #0002;
+}
+
+.publicidades h2, .motivacional h2, .depoimentos h2, .faq h2, .blog h2 {
+    margin-top: 0;
+    font-size: 1.45rem;
+    color: #225fa2;
+}
+
+.ads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.ad {
+    background: #eaf3ff;
+    border-radius: 8px;
+    padding: 18px;
+    min-width: 220px;
+    flex: 1 1 260px;
+    box-shadow: 0 1px 4px #0001;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+    position: relative;
+    margin-bottom: 12px;
+    animation: fadeInUp 0.5s;
+}
+.ad:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px #2d8cff2a;
+    background: #cbe3ff;
+}
+
+.ad span.tipo-vaga {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 0.9em;
+    background: #2d8cff;
+    color: #fff;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-weight: 500;
+}
+
+.ad h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    color: #20486e;
+}
+
+@keyframes fadeInUp {
+    from { opacity:0; transform: translateY(24px);}
+    to { opacity:1; transform: none;}
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: #0008;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 380px;
+    width: 90vw;
+    padding: 32px 20px 20px 20px;
+    position: relative;
+    box-shadow: 0 8px 32px #0005;
+    animation: fadeInUp 0.3s;
+}
+
+.close-btn {
+    position: absolute;
+    right: 18px; top: 10px;
+    font-size: 1.8rem;
+    color: #2d8cff;
+    cursor: pointer;
+}
+
+/* Modal Detalhes da Vaga */
+#detalhes-vaga h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+#detalhes-vaga .detalhe-info {
+    color: #214;
+    margin-bottom: 7px;
+    font-size: 0.97rem;
+}
+#detalhes-vaga .detalhe-descricao {
+    margin: 13px 0 7px 0;
+}
+#detalhes-vaga .detalhe-beneficios {
+    margin-bottom: 8px;
+    color: #065;
+}
+#detalhes-vaga .btn-candidatar {
+    background: #2d8cff;
+    color: #fff;
+    padding: 9px 0;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#detalhes-vaga .btn-candidatar:hover {
+    background: #1c5fa8;
+}
+
+/* Carrossel */
+.carrossel {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    margin-bottom: 8px;
+}
+.carrossel-item {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s;
+    opacity: 0;
+}
+.carrossel-item.ativo {
+    display: flex;
+    opacity: 1;
+    position: relative;
+}
+.carrossel img {
+    border-radius: 7px;
+    width: 160px;
+    height: 100px;
+    object-fit: cover;
+    box-shadow: 0 1px 6px #0002;
+}
+.carrossel blockquote {
+    font-style: italic;
+    color: #2d8cff;
+    margin: 10px 0 0 0;
+    padding-left: 16px;
+    border-left: 4px solid #2d8cff;
+    background: #f4faff;
+    border-radius: 6px;
+}
+.carrossel button {
+    position: absolute;
+    top: 50%;
+    background: #fff8;
+    border: none;
+    color: #2d8cff;
+    font-size: 2rem;
+    padding: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background .2s;
+    z-index: 2;
+}
+.carrossel button:hover {
+    background: #eaf3ff;
+}
+#carrossel-prev { left: 3px;}
+#carrossel-next { right: 3px;}
+
+/* Depoimentos */
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 14px;
+}
+.depoimento {
+    background: #eaf3ff;
+    border-radius: 8px;
+    padding: 20px 18px;
+    flex: 1 1 260px;
+    box-shadow: 0 2px 6px #0001;
+    font-size: 1.05rem;
+    min-width: 220px;
+    animation: fadeInUp 0.6s;
+}
+.depoimento p {
+    margin: 0 0 10px 0;
+    color: #225fa2;
+}
+.depoimento span {
+    font-size: 0.96em;
+    color: #444;
+}
+
+/* FAQ */
+.faq-lista details {
+    margin-bottom: 12px;
+    background: #eaf3ff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px #0001;
+}
+.faq-lista summary {
+    font-weight: bold;
+    color: #225fa2;
+    cursor: pointer;
+}
+.faq-lista p {
+    margin: 10px 0 0 0;
+}
+/* Blog */
+.blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 12px;
+}
+.blog-card {
+    background: #eaf3ff;
+    border-radius: 8px;
+    padding: 18px 16px;
+    flex: 1 1 220px;
+    min-width: 200px;
+    box-shadow: 0 1px 4px #0001;
+    transition: transform .18s, box-shadow .15s;
+    cursor: pointer;
+}
+.blog-card:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 18px #2d8cff16;
+    background: #cbe3ff;
+}
+
+
+/* Depoimentos1 */
+.depoimentos1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    border-radius: 5px;
+    margin-top: 12px;
+    width: 100%;
+    background-image: url(2.avif); 
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-size: cover;   
+    height: 450px;
+}
+
+/* Footer */
+footer {
+    background: #2d8cff;
+    color: #fff;
+    padding: 24px 0 0 0;
+    margin-top: 32px;
+    
+}
+.footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 22px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: text-decoration .2s;
+}
+.footer-links a:hover {
+    border-bottom: 2px solid #ffc20a;
+}
+.footer-links #theme-toggle {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+.footer-links #theme-toggle:hover {
+  background: #0074b1;
+  text-decoration: underline;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.97rem;
+    margin-top: 18px;
+    color: #dde9fa;
+    padding-bottom: 8px;
+}
+
+/* Modal login/cadastro (igual antes) */
+.tipo-login {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 22px;
+    font-size: 1.1rem;
+}
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    margin-bottom: 2px;
+    font-size: 0.97rem;
+}
+.form-group input {
+    padding: 7px 9px;
+    font-size: 1rem;
+    border: 1px solid #b6d3f6;
+    border-radius: 5px;
+    background: #f4faff;
+}
+#btn-entrar {
+    width: 100%;
+    padding: 10px;
+    background: #2d8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+#btn-entrar:hover {
+    background: #1c5fa8;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .ads, .depoimentos-container,.publicidades1 .banner, .blog-cards, .footer-main {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .ads .ad, .blog-card, .depoimento { min-width: 160px;}
+    header { flex-direction: column; gap: 16px; align-items: flex-start;}
+    .footer-main { align-items: flex-start;}
+}
+@media (max-width: 600px) {
+    main { padding: 0 3vw;}
+    .publicidades, .motivacional, .depoimentos, .faq, .blog { padding: 14px;}
+    .carrossel img { width: 100px; height: 65px;}
+    .footer-logo img { width: 28px; height: 28px;}
+    .footer-main { padding: 0 3vw;}
+    .publicidades1 .banner {
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+    height: 450px;
+    }
+}
